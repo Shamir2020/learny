@@ -1,0 +1,10 @@
+.consultation-page-container{
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+.consultation-card{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    margin: 20px 0;
+}

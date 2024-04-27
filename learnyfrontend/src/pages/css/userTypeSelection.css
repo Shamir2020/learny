@@ -1,0 +1,41 @@
+.user-type-selection-container{
+    max-width: 1200px;
+    width: 98%;
+    background-color: aquamarine;
+    margin: 20px auto;
+    border-radius: 5px;
+    padding: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    
+}
+.user-type-selection-container > form {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.user-type-selection-container  form  .user-type-selection-col2, .user-type-selection-col1 {
+    width: 50%;
+    padding: 30px;
+    font-weight: 500;
+    line-height: 2;
+}
+
+.user-type-selection-container form button {
+    padding: 7px 10px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    width: 95%;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    transition: 0.2s background-color ease-in;
+    cursor: pointer;
+}
+.user-type-selection-container form button:hover {
+    background-color: white;
+    color: black;
+}

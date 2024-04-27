@@ -1,0 +1,29 @@
+.about-us-container {
+    max-width: 1200px;
+    width: 98%;
+    margin: auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+p {
+    /* color: #666; */
+    color: black;
+}
+ol.team-container {
+    list-style-type: disc;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+div.team-member {
+    display: flex;
+    margin-bottom: 20px;
+}
+.team-member-info {
+    margin: 0;
+    padding: 0;
+}

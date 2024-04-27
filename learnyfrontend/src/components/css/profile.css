@@ -1,0 +1,51 @@
+.profile-link {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 140px;
+    color: white;
+    
+}
+.navbar .navbarInside ol a.profile-link{
+    padding: 0;
+    
+}
+.profile-link .stylish-btns1{
+
+    padding: 8px 32px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #03a9f4);
+    background-size: 400%;
+}
+
+
+
+.stylish-btns1::before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    filter: blur(20px);
+    opacity: 1;
+    z-index: -1;
+}
+.stylish-btns1 {
+    animation: glow 12s linear infinite;
+}
+
+@keyframes glow {
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+

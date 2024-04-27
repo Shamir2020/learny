@@ -1,0 +1,25 @@
+.teacher-dashboard-container{
+    max-width: 1100px;
+    width: 98%;
+    margin: auto;
+}
+
+.teacher-dashboard-card{
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.teacher-dashboard-card ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.teacher-dashboard-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+.teacher-dashboard-card p {
+    color: #666;
+}

@@ -1,0 +1,28 @@
+.update-category-container{
+    width: 98%;
+    max-width: 1100px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.update-category-container > form {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+}
+.update-category-container > form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    resize: none;
+}
+.update-category-container > form label {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 10px 0 0 0;
+}
+
+.update-category-container .update-btn {
+    width: 100%;
+}

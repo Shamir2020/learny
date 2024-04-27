@@ -1,0 +1,119 @@
+.admin-course-category-page-container{
+    max-width: 1100px;
+    width: 98%;
+    
+    margin: 0 auto;
+
+}
+
+
+.deletePromptContainer > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.deletePromptContainer .yes, .deletePromptContainer .no {
+    width: 40%;
+    padding: 5px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s background-color ease-in-out;
+
+}
+.deletePromptContainer .yes {
+    background-color: greenyellow;
+}
+.deletePromptContainer .no {
+    background-color: black;
+    color: white;
+}
+
+.deletePromptContainer .yes:hover {
+    background-color: rgba(172, 255, 47, 0.71);
+}
+.deletePromptContainer .no:hover {
+    background-color: rgb(96, 96, 96);
+}
+
+.admin-teacher-container {
+    max-width: 1100px;
+    width: 98%;
+    
+    margin: 0 auto;
+}
+
+.admin-course-category-card {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px 30px;
+    line-height: 1.7;
+    margin: 10px 0;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+}
+.category-card-col1 {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+.category-card-col2 {
+    padding: 0 20px;
+    width: 85%;
+}
+.category-card-col1 img {
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.deletePromptContainer {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 95%;
+    height: 90%;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.admin-course-category-card p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.category-btns {
+    padding: 6px 10px;
+    font-weight: 600;
+    margin: 0 10px 0 0;
+    font-size: 15px;
+    min-width: 100px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s background-color ease-in;
+}
+.category-btns:hover {
+    background-color: rgb(47, 47, 47);
+}
+
+.create-btn {
+    width: 100%;
+    margin: 30px 0;
+    padding: 7px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+

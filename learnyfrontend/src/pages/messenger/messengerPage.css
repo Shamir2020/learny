@@ -1,0 +1,221 @@
+.messenger-container {
+    width: 100%;
+    height: calc(100dvh - 110px);
+    display: flex;
+    --messengerColWidth: 500px;
+    --convoHeader: 80px;
+    --inputContainer: 80px;
+    --common-color: rgb(54, 54, 54);
+    --headerColor: rgb(61, 61, 61);
+    --common-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: var(--common-color);
+
+    color: white;
+}
+
+
+
+.messenger-container p{
+    color: white;
+}
+
+.messenger-col-1, .messenger-col-2, .messenger-col-3{
+    height: 100%;
+}
+
+.messenger-col-1, .messenger-col-3 {
+    width: var(--messengerColWidth);
+
+    overflow-y: auto;
+}
+.messenger-col-2 {
+    width: calc(100% - var(--messengerColWidth));
+    position: relative;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    padding: 0;
+}
+.messenger-col-3{
+    display: flex;
+    flex-direction: column;
+}
+.messenger-col-3-image-container{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+.messenger-col-3-image-container img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.messenge-col3-info-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.conversation-card{
+    display: flex;
+    height: 90px;
+    margin: 5px 0;
+    cursor: pointer;
+
+}
+.conversation-card:hover {
+    background-color: rgb(73, 73, 73);
+}
+.conversation-card-col-1{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.conversation-card-col-1 img {
+    width: 70px;
+    border-radius: 50%;
+    height: 70px;
+    object-fit: cover;
+}
+.conversation-card-col-2{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 0 20px;
+}
+.no-conversation-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.conversation-card-col-2 h3, p{
+    margin: 5px 0;
+}
+
+
+
+.conversation-header {
+    display: flex;
+    height: var(--convoHeader);
+    background-color: var(--headerColor);
+    width: 100%;
+    box-shadow: var(--common-shadow);
+}
+
+
+.conversation-header-col-1, .conversation-header-col-2 {
+    height: 100%;
+}
+.conversation-header-col-1{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.conversation-header-col-2{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.conversation-header-col-2 h3 {
+    margin: 0;
+}
+.conversation-header .conversation-header-col-1 img {
+    height: 65px;
+    width: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.small-text{
+    font-size: 14px;
+}
+
+
+.message-input-container{
+    position: absolute;
+    bottom: 0;
+    background-color: var(--headerColor);
+    box-shadow: var(--common-shadow);
+    width: 100%;
+    height: var(--inputContainer);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.message-input-container input {
+    width: 88%;
+    height: 35px;
+    padding: 0 10px;
+    font-weight: 500;
+
+}
+.message-input-container button{
+    width: 10%;
+    height: 35px;
+}
+
+.message-container {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+}
+.sender-text {
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+.receiver-text {
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+.message-box {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: calc(100% - var(--convoHeader) - var(--inputContainer));
+}
+
+.message-box p {
+    width: fit-content;
+    padding: 10px;
+    color: black;
+}
+
+.message-box .sender {
+    justify-self: flex-end;
+    align-self: flex-end;
+    background-color: azure;
+    margin: 0 10px;
+}
+.message-box .receiver {
+    justify-self: flex-start;
+    align-self: flex-start;
+    background-color: rgb(0, 204, 255);
+    margin: 10px;
+}
+
+
+p.tiny-text {
+    color: white;
+    font-size: 12px;
+    margin: 0;
+}
+
