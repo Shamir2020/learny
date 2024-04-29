@@ -1,0 +1,29 @@
+.Affiliate-Container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+h2 {
+    text-align: center;
+    margin-top: 40px;
+}
+.affiliate-program {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.affiliate-program h3 {
+    color: #333;
+}
+.affiliate-program p {
+    color: #666;
+}
+.affiliate-program a {
+    color: #007bff;
+    text-decoration: none;
+}
+.affiliate-program a:hover {
+    text-decoration: underline;
+}

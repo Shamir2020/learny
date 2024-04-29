@@ -117,3 +117,14 @@
 
 }
 
+.admin-department-card{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    margin: 20px 0 ;
+}
+.department-card-col1 img {
+    height: 300px;
+    border-radius: 4px;
+}

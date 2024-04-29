@@ -21,6 +21,7 @@ const conversationRouter = require('./routers/conversationRouter')
 const messageRouter = require('./routers/messageRouter')
 const searchRouter = require('./routers/searchRouter')
 const consultationRouter = require('./routers/consultationRouter')
+const departmentRouter = require('./routers/departmentRouter')
 
 
 app.get('/', async (req, res)=>{
@@ -69,6 +70,8 @@ app.use('/api/conversation', conversationRouter)
 app.use('/api/message', messageRouter)
 
 app.use('/api/search', searchRouter)
+
+app.use('/api/department',upload.single('departmentPic'), departmentRouter)
 
 app.use('/api/test',upload.single('image'), testRouter)
 

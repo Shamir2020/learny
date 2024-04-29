@@ -27,6 +27,7 @@ const AdminDashboard = ()=> {
                         <Link to='/admin-teacher-page'><li>Go to Teacher Page</li></Link>
                         <Link to='/admin-student-page'><li>Go to Student Page</li></Link>
                         <Link to='/admin-announcement-page'><li>Go to Announcement Page</li></Link>
+                        <Link to='/admin-department-page'><li>Go to Department Page</li></Link>
                     </ol>
                 </div>
             )

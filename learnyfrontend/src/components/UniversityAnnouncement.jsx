@@ -37,7 +37,7 @@ const UniversityAnnouncement = ()=>{
                 {announcements && announcements.map((announcement)=>{
                     return (
                         <div className="announcement-card">
-                            <h2>{announcement.title}</h2>
+                            <h2 style={{textAlign:'left'}}>{announcement.title}</h2>
                             <p>{formatDate(announcement.date)}</p>
                         </div>
                     )

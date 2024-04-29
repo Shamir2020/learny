@@ -43,7 +43,7 @@ const Navbar = ()=>{
                     {/* <Link to='/'><li>Home</li></Link> */}
                     <Link to='/course-catelog'><li>Courses</li></Link>
                     <Link to='/teacher-catelog'><li>Teachers</li></Link>
-                    <Link to=''><li>Departments</li></Link>
+                    <Link to='/department-catalog-page'><li>Departments</li></Link>
                     <Link to='/about-us'><li>About Us</li></Link>
                     {/* <Link to='/upload-test-image'>Test</Link> */}
                     <Profile />

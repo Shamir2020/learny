@@ -43,6 +43,17 @@ import SearchPage from './pages/searchPage';
 import ConsultationTracker from './teacher/consultationTracker';
 import ConsultationForm from './teacher/consultationForm';
 import ConsultationPage from './pages/consultationPage';
+import AffiliatePrograms from './pages/footerPages/affiliatePrograms';
+import Consultation from './pages/footerPages/consultation';
+import DropCourse from './pages/footerPages/dropCourse';
+import EnrollCourse from './pages/footerPages/enrollCourse';
+import FAQ from './pages/footerPages/faq';
+import LiveChatWithTeacher from './pages/footerPages/liveChatWithTeacher';
+import PrivacyPolicy from './pages/footerPages/privacyPolicy';
+import Services from './pages/footerPages/services';
+import DepartmentCatelog from './pages/department';
+import AdminDepartment from './admin/adminDepartment';
+import DepartmentForm from './admin/departmentForm';
 
 
 function App() {
@@ -68,6 +79,9 @@ function App() {
           <Route path='/user-selection' element={<UserTypeSelection />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/course-catelog' element={<CourseCatelogPage />} />
+
+
+          <Route path='/department-catalog-page' element={<DepartmentCatelog />} />
 
 
           <Route path='/search-page/:keyword' element={<SearchPage />} />
@@ -99,8 +113,24 @@ function App() {
 
           <Route path='/admin-course-form' element={<CourseForm />} />
 
+          <Route path='/admin-department-page' element={<AdminDepartment />} />
+
+          <Route path='/admin-department-form' element={<DepartmentForm />} />
 
           {/* Admin */}
+
+
+          {/* Footer Pages  */}
+          <Route path='/affiliate-programs' element={<AffiliatePrograms />} />
+          <Route path='/consultation-footer' element={<Consultation />} />
+          <Route path='drop-course' element={<DropCourse />} />
+          <Route path='/enroll-course' element={<EnrollCourse />} />
+          <Route path='/faq' element={<FAQ />} />
+          <Route path='live-chat-with-teacher' element={<LiveChatWithTeacher />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+          <Route path='/services' element={<Services />} />
+
+          {/* Footer Pages  */}
 
 
           {/* Teacher  */}

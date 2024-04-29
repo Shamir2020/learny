@@ -7,27 +7,27 @@ const Footer = ()=>{
                 <div className="footerCols">
                     <ol>
                         <h3>Learny</h3>
-                        <Link to=''><li>About Us</li></Link>
-                        <Link to=''><li>Our Services</li></Link>
-                        <Link to=''><li>Privacy Policy</li></Link>
+                        <Link to='/about-us'><li>About Us</li></Link>
+                        <Link to='/services'><li>Our Services</li></Link>
+                        <Link to='/privacy-policy'><li>Privacy Policy</li></Link>
                         
                     </ol>
                 </div>
                 <div className="footerCols">
                 <ol>
                         <h3>Get Help</h3>
-                        <Link to=''><li>FAQ</li></Link>
-                        <Link to=''><li>Affiliate Programs</li></Link>
-                        <Link to=''><li>Live chat with teacher</li></Link>
+                        <Link to='/faq'><li>FAQ</li></Link>
+                        <Link to='/affiliate-programs'><li>Affiliate Programs</li></Link>
+                        <Link to='/live-chat-with-teacher'><li>Live chat with teacher</li></Link>
                         
                     </ol>
                 </div>
                 <div className="footerCols">
                 <ol>
                         <h3>Online Learning</h3>
-                        <Link to=''><li>Enroll Courses</li></Link>
-                        <Link to=''><li>Drop Courses</li></Link>
-                        <Link to=''><li>Consultation</li></Link>
+                        <Link to='/enroll-course'><li>Enroll Courses</li></Link>
+                        <Link to='/drop-course'><li>Drop Courses</li></Link>
+                        <Link to='/consultation'><li>Consultation</li></Link>
                         
                     </ol>
                 </div>
