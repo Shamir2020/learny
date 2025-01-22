@@ -4,6 +4,8 @@ import './css/courseViewPage.css'
 import { useParams, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import { jwtDecode } from 'jwt-decode'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 const CourseViewPage = ()=>{
 
@@ -12,11 +14,15 @@ const CourseViewPage = ()=>{
     const params = useParams()
     const id = params.id
 
-    const decode = jwtDecode(localStorage.getItem('token'))
+    var role, userId
 
-    const role = decode.role
+    if (localStorage.getItem('token') != null){
+        const decode = jwtDecode(localStorage.getItem('token'))
 
-    const userId = decode.id
+        role = decode.role
+
+        userId = decode.id
+    }
 
     const [course, setCourse] = useState({})
 
@@ -110,6 +116,10 @@ const CourseViewPage = ()=>{
     },[])
 
     return (
+        <>
+        <Navbar />
+
+        <div className="learny-container">
         <div className="course-view-page-container">
         
         <div className="row1">
@@ -186,6 +196,10 @@ const CourseViewPage = ()=>{
         </div>
 
     </div>
+        </div>
+
+        <Footer />
+        </>
     )
 }
 

@@ -61,10 +61,10 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar />
+      
       <Toaster position='top-right' toastOptions={{ duration: 2000 }} />
 
-      <div className='learny-container'>
+
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -166,10 +166,7 @@ function App() {
           <Route path='/admin' element={<AdminLogin />} />
 
         </Routes>
-      </div>
 
-
-      <Footer />
 
 
     </div>

@@ -1,12 +1,19 @@
+import Footer from "../components/footer"
+import Navbar from "../components/navbar"
 import UniversityAnnouncementPage from "./adminUniversityAnnouncement"
 
 
 
 const AdminAnnouncementPage = ()=>{
     return (
-        <div className="admin-announcement-page">
+        <>
+        <Navbar />
+        <div className="admin-announcement-page learny-container">
             <UniversityAnnouncementPage />
         </div>
+        <Footer />
+        </>
+        
     )
 }
 

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import './css/lectureInsidePage.css'
 
 import {useParams, useNavigate} from 'react-router-dom'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 const LectureInsidePage = ()=>{
     
@@ -35,11 +37,16 @@ const LectureInsidePage = ()=>{
 
 
     return (
-        <div className="lecture-inside-page-container">
+        <div className="learny-container">
+            <Navbar />
+            <div className="lecture-inside-page-container">
             
             <h3>{title} {lectureNumber}</h3>
             <div className='lectureVideo' dangerouslySetInnerHTML={videoUrl} />
             <div dangerouslySetInnerHTML={content}></div>
+        </div>
+        <Footer />
+
         </div>
     )
 }

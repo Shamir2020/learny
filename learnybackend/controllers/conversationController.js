@@ -1,9 +1,6 @@
 const mongoose = require('mongoose')
 const Conversation = require('../models/conversationModel')
 
-
-
-
 const getConversation = async (req, res)=>{
     const id = req.params.id 
 
@@ -56,15 +53,24 @@ const CreateConversation = async (req, res)=>{
     if (!mongoose.Types.ObjectId.isValid(req.body.senderId) || !mongoose.Types.ObjectId.isValid(req.body.receiverId)){
         return res.status(400).json({error: 'Invalid members ID'})
     }
+    try {
+        let conversation = await Conversation.findOne({
+            members: {$all: [req.body.senderId, req.body.receiverId]}
+        })
 
-    const conversation = await Conversation.create({
-        members: [req.body.senderId, req.body.receiverId]
-    })
+        if (!conversation){
+            conversation = await Conversation.create({
+                members: [req.body.senderId, req.body.receiverId]
+            })
+        }
 
-    if (!conversation){
+        return res.status(200).json(conversation)
+
+    }
+    catch(error){
         return res.status(400).json({error:'Conversation could not be created'})
     }
-    res.status(200).json(conversation)
+
     
 }
 

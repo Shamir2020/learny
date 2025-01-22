@@ -1,6 +1,8 @@
 
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import Navbar from "../components/navbar"
+import Footer from "../components/footer"
 const TeacherCourseCatelog = ()=>{
 
 
@@ -44,6 +46,7 @@ const TeacherCourseCatelog = ()=>{
 
     return (
         <>
+        <Navbar />
         <h2 style={{textAlign:'center'}}>{name}'s courses</h2>
         <div className="course-catelog-page-container">
             
@@ -75,6 +78,8 @@ const TeacherCourseCatelog = ()=>{
             })}
  
          </div>
+
+        <Footer />
         </>
     )
 }

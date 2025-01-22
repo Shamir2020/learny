@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import './css/login.css'
 import {Link, useNavigate, useParams} from 'react-router-dom'
 import {toast} from 'react-hot-toast'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 const Register = ()=>{
 
     const {type} = useParams()
@@ -80,6 +82,9 @@ const Register = ()=>{
 
     if (!token){
         return (
+            <>
+            <Navbar />
+            <div className="learny-container">
             <div className="auth-container register-container">
                 <form action="">
                     <h3>{userType} register</h3>
@@ -117,6 +122,9 @@ const Register = ()=>{
                     <p className='msg-message'>{msg && msg}</p>
                 </form>
             </div>
+            </div>
+            <Footer />
+            </>
         )
     }
     else {

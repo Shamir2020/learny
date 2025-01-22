@@ -42,13 +42,17 @@ const StudentDashboard = ()=>{
         FetchCourses()
     },[])
 
+    const GoToCoursePage = (id)=>{
+        navigate(`/course-inside-page/${id}`)
+    }
+
     return (
         <div class="student-dashboard-container">
         <h2>You're enrolled in these courses</h2>
         
 
         {courses && courses.map((course)=>{
-            const description = LimitText(course.description,300)
+            const description = {__html: course.description}
             return (
                 
                 <div className="admin-course-card">
@@ -59,9 +63,9 @@ const StudentDashboard = ()=>{
                         <div className="admin-course-card-col2">
                         <h3>{course.title}</h3>
                         <p>{course.courseCode}</p>
-                        <p>{description}</p>
+                        <div dangerouslySetInnerHTML={description}></div>
                         <div className="category-btns-container">
-                        <button className="category-edit category-btns" >Continue Learning</button>
+                        <button onClick={(e)=>GoToCoursePage(course._id)} className="category-edit category-btns" >Continue Learning</button>
                                     
                         </div>
                         </div>

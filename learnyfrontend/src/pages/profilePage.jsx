@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 import './css/profilePage.css'
 import {Link,useNavigate} from 'react-router-dom'
 import { useState } from 'react'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 const ProfilePage = ()=>{
 
     const navigate = useNavigate()
@@ -29,6 +31,10 @@ const ProfilePage = ()=>{
 
     if (token){
         return (
+            <>
+            <Navbar />
+
+            <div className="learny-container">
             <div className="profile-page">
                 <div className="imageContainer">
                         <img src={`http://localhost:3000/${profile.profilePic}`} alt="error" />
@@ -54,6 +60,9 @@ const ProfilePage = ()=>{
                 </div>
                 <Link to='/update-profile'><button className='update-profile-btn1'>Update Profile</button></Link>
             </div>
+            </div>
+            <Footer />
+            </>
         )
     }
     else {

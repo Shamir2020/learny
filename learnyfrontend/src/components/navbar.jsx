@@ -9,7 +9,11 @@ const Navbar = ()=>{
     const navigate = useNavigate()
 
     const toggleClassName = ()=>{
-        document.querySelector('.navbar').classList.toggle('sticky', window.scrollY > 0)
+        try{
+            document.querySelector('.navbar').classList.toggle('sticky', window.scrollY > 0)
+        }catch(error){
+            console.log(error)
+        }
     }
     window.addEventListener('scroll', toggleClassName)
 

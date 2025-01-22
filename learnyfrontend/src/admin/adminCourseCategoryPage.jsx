@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import './css/adminCourseCategoryPage.css'
-import {Link, useNavigate} from 'react-router-dom'
-import {toast} from 'react-hot-toast'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-hot-toast'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
-const AdminCourseCategoryPage = ()=> {
+const AdminCourseCategoryPage = () => {
 
     const [categories, setCategories] = useState([])
     const token = localStorage.getItem('token')
@@ -12,36 +14,36 @@ const AdminCourseCategoryPage = ()=> {
     const BaseUrl = 'http://localhost:3000'
 
 
-    const moveToUpdateForm = (info)=>{
-        navigate('/admin-category-form', {state: info})
+    const moveToUpdateForm = (info) => {
+        navigate('/admin-category-form', { state: info })
     }
 
     const moveToCreateForm = () => {
-        navigate('/admin-category-form', {state: ['create']})
+        navigate('/admin-category-form', { state: ['create'] })
     }
 
-    const showDeletePrompt = (index)=> {
+    const showDeletePrompt = (index) => {
         let deletePromptContainerElements = document.querySelectorAll('.deletePromptContainer')
-        
+
         deletePromptContainerElements[index].style.display = 'flex'
         console.log('appear now')
-        
+
     }
-    const hideDeletePrompt = (index)=>{
+    const hideDeletePrompt = (index) => {
         let deletePromptContainerElements = document.querySelectorAll('.deletePromptContainer')
-        
+
         deletePromptContainerElements[index].style.display = 'none'
     }
 
-    const deleteCategoryRequest = async (id, index)=> {
+    const deleteCategoryRequest = async (id, index) => {
         console.log(id)
-        const response = await fetch(`/api/category/${id}`,{
+        const response = await fetch(`/api/category/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
         })
-        if (response.ok){
+        if (response.ok) {
             toast.success('Category deleted successfully')
             window.location.reload()
             hideDeletePrompt(index)
@@ -53,59 +55,66 @@ const AdminCourseCategoryPage = ()=> {
         }
     }
 
-    useEffect(()=>{
-        const FetchCategoriesData = async ()=>{
-            const response = await fetch('/api/category',{
+    useEffect(() => {
+        const FetchCategoriesData = async () => {
+            const response = await fetch('/api/category', {
                 headers: {
                     "Authorization": `Bearer ${token}`
                 }
             })
-            if (response.ok){
+            if (response.ok) {
                 const data = await response.json()
                 setCategories(data)
-                
+
             }
         }
         FetchCategoriesData()
-    },[])
+    }, [])
 
     return (
-        <div className="admin-course-category-page-container">
-            <h3>Admin Course Category Page</h3>
-
-            
-
-            {categories && categories.map(function (category, index){
-                return (
-                    <div className="admin-course-category-card">
+        <>
+            <Navbar />
+            <div className="admin-course-category-page-container learny-container">
+                <h3>Admin Course Category Page</h3>
 
 
-                    <div className="deletePromptContainer">
-                        <h2>Are you sure to delete this category ?</h2>
-                        <div>
-                            <button onClick={()=>{deleteCategoryRequest(category._id, index)}} className="yes">Yes</button>
-                            <button onClick={()=>hideDeletePrompt(index)} className="no">No</button>
+
+                {categories && categories.map(function (category, index) {
+
+                    const description = {__html: category.description};
+                    return (
+                        <div className="admin-course-category-card">
+
+
+                            <div className="deletePromptContainer">
+                                <h2>Are you sure to delete this category ?</h2>
+                                <div>
+                                    <button onClick={() => { deleteCategoryRequest(category._id, index) }} className="yes">Yes</button>
+                                    <button onClick={() => hideDeletePrompt(index)} className="no">No</button>
+                                </div>
+                            </div>
+                            <div className="category-card-col1">
+                                <img src={`${BaseUrl}/${category.categoryImage}`} alt="error" />
+                            </div>
+                            <div className="category-card-col2">
+                                <h4>{category.category}</h4>
+                                <div dangerouslySetInnerHTML={description}></div>
+                                <div className="category-btns-container">
+
+                                    <button onClick={() => moveToUpdateForm(["update", category])} className="category-edit category-btns">Edit</button>
+                                    <button onClick={() => showDeletePrompt(index)} className="category-delete category-btns">Delete</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="category-card-col1">
-                        <img src={`${BaseUrl}/${category.categoryImage}`} alt="error" />
-                    </div>
-                    <div className="category-card-col2">
-                        <h4>{category.category}</h4>
-                        <p>{category.description}</p>
-                        <div className="category-btns-container">
-                       
-                        <button onClick={()=>moveToUpdateForm(["update",category])} className="category-edit category-btns">Edit</button>
-                        <button onClick={()=>showDeletePrompt(index)} className="category-delete category-btns">Delete</button>
-                        </div>
-                    </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
 
-            <button onClick={moveToCreateForm} className='create-btn stylish-btns1'>Create a category</button>
-        
-        </div>
+                <button onClick={moveToCreateForm} className='create-btn stylish-btns1'>Create a category</button>
+
+            </div>
+
+            <Footer />
+        </>
     )
 }
 

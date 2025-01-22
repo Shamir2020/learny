@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react'
 import './css/teacherCatelogPage.css'
 
-import {toast} from 'react-hot-toast'
+import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
-const TeacherCatelogPage = ()=>{
+const TeacherCatelogPage = () => {
 
 
     const navigate = useNavigate()
 
     const [teachers, setTeachers] = useState([])
 
-    const FetchTeacherData = async ()=> {
+    const FetchTeacherData = async () => {
         const response = await fetch('/api/random/teachers')
 
         if (response.ok) {
@@ -25,30 +27,38 @@ const TeacherCatelogPage = ()=>{
         }
     }
 
-    const ViewCourses = (id)=>{
+    const ViewCourses = (id) => {
         navigate(`/teacher-course-catelog/${id}`)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         FetchTeacherData()
-    },[])
+    }, [])
 
     return (
-        <div className="teacher-catelog-page-container">
-            <h2>This is teacher catelog page</h2>
+        <>
+            <Navbar />
 
-            {teachers && teachers.map((teacher)=>{
-                return (
-                    <div className="teacher-catelog-card">
-                        <img src={`http://localhost:3000/${teacher.profile.profilePic}`} alt="" />
-                        <h3>{teacher.name}</h3>
-                        <p>Lecturer, Voboghure University</p>
-                        <button onClick={()=>ViewCourses(teacher._id)} className='stylish-btns' >View his courses</button>
-                    </div>
-                )
-            })}
+            <div className="learny-container">
+                <div className="teacher-catelog-page-container">
+                    <h2>This is teacher catelog page</h2>
 
-        </div>
+                    {teachers && teachers.map((teacher) => {
+                        return (
+                            <div className="teacher-catelog-card">
+                                <img src={`http://localhost:3000/${teacher.profile.profilePic}`} alt="" />
+                                <h3>{teacher.name}</h3>
+                                <p>Lecturer, Voboghure University</p>
+                                <button onClick={() => ViewCourses(teacher._id)} className='stylish-btns' >View his courses</button>
+                            </div>
+                        )
+                    })}
+
+                </div>
+            </div>
+
+            <Footer />
+        </>
     )
 }
 

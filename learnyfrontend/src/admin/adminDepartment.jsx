@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom"
 import {toast} from 'react-hot-toast'
 import { useState, useEffect } from "react"
+import Navbar from "../components/navbar"
+import Footer from "../components/footer"
 
 const AdminDepartment = ()=>{
 
@@ -66,7 +68,9 @@ const AdminDepartment = ()=>{
         FetchDepartments()
     },[])
     return (
-        <div className="admin-course-category-page-container">
+        <>
+        <Navbar />
+        <div className="admin-course-category-page-container learny-container">
             <h3>Admin Department Page</h3>
 
             
@@ -103,6 +107,8 @@ const AdminDepartment = ()=>{
             <button onClick={moveToCreateForm} className='create-btn stylish-btns1'>Create a department</button>
         
         </div>
+        <Footer />
+        </>
     )
 }
 

@@ -194,7 +194,7 @@ const Messenger = () => {
                                 </div>
                                 <div className="conversation-header-col-2">
                                     <h3>{currentReceiver.name}</h3>
-                                    <p className="small-text">Active 22m ago</p>
+                                    <p className="small-text">Active now</p>
                                 </div>
 
                             </div>
@@ -210,8 +210,8 @@ const Messenger = () => {
                             </div>
 
                             <form className="message-input-container">
-                                <input type="text" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} name="message" />
-                                <button onClick={SubmitMessage}>Send</button>
+                                <input type="text" value={newMessage} autoComplete='off' onChange={(e) => setNewMessage(e.target.value)} name="message" />
+                                <button onClick={SubmitMessage}><i className="fa-solid fa-paper-plane"></i></button>
                             </form>
                         </>
 

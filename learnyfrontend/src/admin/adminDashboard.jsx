@@ -3,6 +3,8 @@ import './css/adminDashboard.css'
 import { useNavigate, Link } from 'react-router-dom'
 import {toast} from 'react-hot-toast'
 import {jwtDecode} from 'jwt-decode'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 const AdminDashboard = ()=> {
 
@@ -19,7 +21,9 @@ const AdminDashboard = ()=> {
         const role = decoded.role
         if (role == 'admin'){
             return (
-                <div className="admin-dashboard-container">
+                <>
+                <Navbar />
+                <div className="admin-dashboard-container learny-container">
                     <h3>Admin Dashboard</h3>
                     <ol>
                         <Link to='/admin-course-page'><li>Go to Course Page</li></Link>
@@ -30,6 +34,8 @@ const AdminDashboard = ()=> {
                         <Link to='/admin-department-page'><li>Go to Department Page</li></Link>
                     </ol>
                 </div>
+                <Footer />
+                </>
             )
         }
         else {

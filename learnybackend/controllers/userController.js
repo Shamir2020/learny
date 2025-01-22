@@ -71,10 +71,13 @@ const Login = asyncHandler(async (req, res)=>{
         }
 
         return res.status(200).json({
+            id: user.id,
             name: user.name,
             username: user.username,
             email: user.email,
-            token: generateToken(user)
+            role: user.role,
+            token: generateToken(user),
+            createdAt: user.createdAt
         })
     }else {
         res.status(400).json({error:'Wrong password'})

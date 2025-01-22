@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/userContext"
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { toast } from "react-hot-toast"
 import './css/profile.css'
 import { jwtDecode } from "jwt-decode"
@@ -12,6 +12,8 @@ const Profile = ()=>{
 
     const token = localStorage.getItem('token')
 
+    const navigate = useNavigate()
+
     var username 
 
     try {
@@ -22,10 +24,11 @@ const Profile = ()=>{
     }
 
     const Logout = async ()=>{
+        navigate('/')
+        
         localStorage.removeItem('token')
         localStorage.removeItem('username')
         localStorage.removeItem('auth')
-
         setUser(null)
         toast.success('Logout successful')
 

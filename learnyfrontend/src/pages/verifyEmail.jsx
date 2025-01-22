@@ -4,6 +4,8 @@ import {Link, useParams} from 'react-router-dom'
 import successful from '../images/successful.png'
 
 import './css/verifyEmail.css'
+import Navbar from "../components/navbar"
+import Footer from "../components/footer"
 
 const VerifyEmail = ()=>{
     
@@ -31,6 +33,9 @@ const VerifyEmail = ()=>{
 
     if (validLink){
         return (
+            <>
+            <Navbar />
+            <div className="learny-container">
             <div className="verify-token-container">
                 <div className="verify-token-container-Inside">
                     <img src={successful} alt="success_img" />
@@ -38,16 +43,25 @@ const VerifyEmail = ()=>{
                     <Link to='/login'><button>Go to Login</button></Link>
                 </div>
             </div>
+            </div>
+            <Footer />
+            </>
         )
     }
     else {
         return (
+            <>
+            <Navbar />
+            <div className="learny-container">
             <div className="verify-token-container">
                 <div className="verify-token-container-Inside">
                     <p>404 not found</p>
                     
                 </div>
             </div>
+            </div>
+            <Footer />
+            </>
         )
     }
 }

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import './css/courseCatelogPage.css'
 import { Link, useNavigate } from 'react-router-dom'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 const CourseCatelogPage = ()=>{
 
@@ -36,6 +38,8 @@ const CourseCatelogPage = ()=>{
         FetchCourses()
     },[])
     return (
+        <>
+        <Navbar />
         <div className="course-catelog-page-container">
             
 
@@ -69,6 +73,10 @@ const CourseCatelogPage = ()=>{
            })}
 
         </div>
+
+        <Footer />
+        
+        </>
     )
 }
 

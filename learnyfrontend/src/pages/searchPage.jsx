@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import './css/courseCatelogPage.css'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 const SearchPage = () => {
 
@@ -41,6 +43,8 @@ const SearchPage = () => {
     }, [])
     return (
         <>
+            <Navbar />
+            <div className="learny-container">
             <h3 style={{ textAlign: 'center' }}>Showing results for "{keyword}"</h3>
             <div className="course-catelog-page-container">
 
@@ -74,6 +78,9 @@ const SearchPage = () => {
                 })}</> : <><div className="no-search-result"><h2>No course found</h2></div></>}
 
             </div>
+            </div>
+
+            <Footer />
         </>
     )
 }

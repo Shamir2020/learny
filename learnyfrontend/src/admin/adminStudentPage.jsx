@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import Navbar from "../components/navbar"
+import Footer from "../components/footer"
 
 
 const AdminStudentPage = ()=>{
@@ -20,7 +22,9 @@ const AdminStudentPage = ()=>{
         FetchStudentData()
     },[])
     return (
-        <div className="admin-teacher-container">
+        <>
+        <Navbar />
+        <div className="admin-teacher-container learny-container">
             <h3>Admin - Student page</h3>
                 
                 {students && students.map(function(student){
@@ -40,6 +44,8 @@ const AdminStudentPage = ()=>{
                     )
                 })}
         </div>
+        <Footer />
+        </>
     )
 }
 

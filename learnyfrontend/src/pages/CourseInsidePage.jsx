@@ -5,6 +5,8 @@ import { jwtDecode } from 'jwt-decode'
 
 import { Link } from 'react-router-dom'
 import './css/courseInsidePage.css'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 
 
@@ -194,6 +196,9 @@ const CourseInsidePage = ()=>{
         return (
             <>
 
+                <Navbar />
+
+                <div className="learny-container">
                 <div className="select-view-container">
                     <select name="" id="" onChange={(e)=>changeView(e.target.value)}>
                         <option value="student">Student view</option>
@@ -299,11 +304,11 @@ const CourseInsidePage = ()=>{
                     )
                 })}
             </div>
-
-            
-    
                                 
             </div>
+                </div>
+
+                <Footer />
             
             </>
 
@@ -317,7 +322,11 @@ const CourseInsidePage = ()=>{
 
     else {
         return (
-            <div className="course-inside-page">
+            <>
+                <Navbar />
+
+                <div className="learny-container">
+                <div className="course-inside-page">
                 <h2>{course.title}</h2>
     
                 {courseContents && courseContents.map((content, index)=>{
@@ -385,6 +394,10 @@ const CourseInsidePage = ()=>{
                 
     
             </div>
+                </div>
+
+                <Footer />
+            </>
         )
     }
 }

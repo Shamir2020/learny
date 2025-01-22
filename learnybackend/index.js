@@ -5,7 +5,6 @@ const app = express()
 const multer = require('multer')
 const upload = multer({dest:'uploads/'})
 
- 
 const userRouter = require('./routers/userRouter')
 const profileRouter = require('./routers/profileRouter')
 const adminRouter = require('./routers/adminRouter')

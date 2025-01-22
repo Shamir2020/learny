@@ -1,4 +1,6 @@
 import toast from "react-hot-toast"
+import Navbar from "../components/navbar"
+import Footer from "../components/footer"
 
 const { useState, useEffect } = require("react")
 
@@ -27,6 +29,10 @@ const DepartmentCatelog = ()=>{
     },[])
 
     return (
+        <>
+        <Navbar />
+
+        <div className="learny-container">
         <div className="admin-course-category-page-container">
             <h3>Departments</h3>
 
@@ -52,6 +58,10 @@ const DepartmentCatelog = ()=>{
 
         
         </div>
+        </div>
+
+        <Footer />
+        </>
     )
 }
 

@@ -7,6 +7,8 @@ import happy from '../images/happy.png'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import UniversityAnnouncement from '../components/UniversityAnnouncement'
+import Footer from '../components/footer'
+import Navbar from '../components/navbar'
 const Home = ()=>{
     const navigate = useNavigate()
 
@@ -33,6 +35,9 @@ const Home = ()=>{
 
     },[])
     return (
+        <>
+        <Navbar />
+
         <div className="home-container">
             <div className="row1">
                 <div className="row1Inside">
@@ -41,7 +46,11 @@ const Home = ()=>{
                     </div>
                     <div className="row1Col2">
                     <h1>Start learning with Learny</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deserunt dolorum fugit, recusandae error aut possimus totam officia quae odio laudantium dolore facilis pariatur placeat tempora tempore mollitia explicabo praesentium.</p>
+                    <p>Learny is a dynamic e-learning platform that makes online education engaging, accessible, and student-friendly. 
+                        Designed for learners of all backgrounds and skill levels, Learny offers an intuitive interface that allows students 
+                        to navigate courses effortlessly, track their progress, and stay motivated throughout their learning journey. 
+                        Each course is led by experienced instructors and incorporates interactive features like quizzes, projects, 
+                        and discussions to encourage active engagement and retention.</p>
                     <button onClick={getStarted} className='learn-btn stylish-btns stylish-btns'>Learn With Learny</button>
                     </div>
                 </div>
@@ -160,6 +169,9 @@ const Home = ()=>{
         <UniversityAnnouncement />
 
         </div>
+
+        <Footer />
+        </>
     )
 }
 

@@ -1,9 +1,14 @@
 import { useState } from "react"
 import {Link} from 'react-router-dom'
 import './css/userTypeSelection.css'
+import Navbar from "../components/navbar"
+import Footer from "../components/footer"
 const UserTypeSelection = ()=> {
     
     return (
+        <>
+        <Navbar />
+        <div className="learny-container">
         <div className="user-type-selection-container">
             <h2>What kind of user are you?</h2>
             <form action="">
@@ -18,6 +23,9 @@ const UserTypeSelection = ()=> {
                 </div>
             </form>
         </div>
+        </div>
+        <Footer />
+        </>
     )
 }
 

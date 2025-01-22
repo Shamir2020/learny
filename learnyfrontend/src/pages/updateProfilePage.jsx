@@ -3,6 +3,8 @@ import './css/profilePage.css'
 import {toast} from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 const UpdateProfile = ()=>{
 
@@ -89,6 +91,9 @@ const UpdateProfile = ()=>{
 
     if(token){
         return (
+            <>
+            <Navbar />
+            <div className="learny-container">
             <div className="profile-page">
                 <form action="" className="profile-page-container" enctype="multipart/form-data">
                     <div className="profile-page-container-col1 profile-page-container-cols">
@@ -149,6 +154,9 @@ const UpdateProfile = ()=>{
                 </form>
                 
             </div>
+            </div>
+            <Footer />
+            </>
         )
     }
     else {
