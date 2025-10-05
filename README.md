@@ -4,7 +4,7 @@
 
 ---
 
-## Project completion - Around 80-85&
+## Project completion - Around 80-85%
 
 Preview video link - https://www.youtube.com/watch?v=GVEZwIT_jZo
 
