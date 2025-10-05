@@ -154,7 +154,7 @@ Please fork the repo, make your changes, and submit a pull request.
 ## 📬 Contact
 
 - 🌐 Website: [www.https://shamirroy.netlify.app](https://shamirroy.netlify.app/)
-- 📧 Email: team@e-learnx.com
+- 📧 Email: shamirroy2020@gmail.com
 - 🐦 Twitter: [programming tube](https://www.youtube.com/@programmingtube6961)
 
 
